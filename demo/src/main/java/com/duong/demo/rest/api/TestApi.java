@@ -1,5 +1,7 @@
 package com.duong.demo.rest.api;
 
+import com.duong.demo.rest.response.ResponseErrorType;
+import com.duong.demo.rest.response.ServerResponseDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,5 +20,10 @@ public class TestApi {
     @GetMapping("/test-1")
     public ResponseEntity test1(){
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Actor Not Found", new Exception());
+    }
+
+    @GetMapping("/test-2")
+    public ServerResponseDto test2(){
+        return ServerResponseDto.fail(ResponseErrorType.SERVER_ERROR);
     }
 }
