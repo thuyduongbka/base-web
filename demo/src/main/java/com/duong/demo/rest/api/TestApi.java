@@ -43,4 +43,13 @@ public class TestApi {
         }
     }
 
+    @GetMapping("/test-find-all")
+    public ServerResponseDto findAll(){
+        try {
+            return ServerResponseDto.success(testService.findAll());
+        } catch (TestException e){
+            return ServerResponseDto.fail(ResponseErrorType.SERVER_ERROR);
+        }
+    }
+
 }
