@@ -14,7 +14,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	//test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner
+	testImplementation group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.0.0-M1'
 	//spring-boot-web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	//swagger

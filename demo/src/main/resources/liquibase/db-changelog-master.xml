@@ -7,5 +7,8 @@
     <include file="liquibase/schema/test.xml"/>
     <include file="liquibase/data/test.xml"/>
 
+    <include file="liquibase/schema/user.xml"/>
+    <include file="liquibase/data/user.xml"/>
+
 
 </databaseChangeLog>
