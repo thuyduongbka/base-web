@@ -9,8 +9,19 @@ import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 public class ParameterizedDemo {
     @ParameterizedTest
-    @ValueSource(strings = { "race car", "radar", "able was I ere I saw elba" })
+    @ValueSource(strings = { "race car", "radar", "aba" })
     void palindromes(String candidate) {
-        assertTrue("ok", candidate.equals(candidate));
+        assertTrue("ok", isPalindrome(candidate));
+    }
+
+    boolean isPalindrome(String s) {
+        int n = s.length();
+        for (int i = 0; i < (n/2); ++i) {
+            if (s.charAt(i) != s.charAt(n - i - 1)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

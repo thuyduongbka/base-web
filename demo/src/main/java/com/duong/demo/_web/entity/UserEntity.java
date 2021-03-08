@@ -16,11 +16,14 @@ public class UserEntity {
     private String email;
     private String password;
 
-    public UserEntity(String email, String password) {
+    public UserEntity(Long id, String email, String password) {
         this.email = email;
         this.password = password;
+        this.id = id;
     }
 
     public UserEntity() {
     }
+
+
 }

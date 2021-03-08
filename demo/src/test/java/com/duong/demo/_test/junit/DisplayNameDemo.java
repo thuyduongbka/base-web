@@ -11,14 +11,4 @@ class DisplayNameDemo {
     void testWithDisplayNameContainingSpaces() {
     }
 
-    @Test
-    @DisplayName("╯°□°）╯")
-    void testWithDisplayNameContainingSpecialCharacters() {
-    }
-
-    @Test
-    @DisplayName("😱")
-    void testWithDisplayNameContainingEmoji() {
-    }
-
 }
