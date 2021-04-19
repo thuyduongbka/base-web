@@ -30,6 +30,12 @@ dependencies {
 	//liquidbase
 	compile 'org.liquibase:liquibase-core:4.3.1'
 
+	//websocket
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+	//flux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
 }
 
 test {
