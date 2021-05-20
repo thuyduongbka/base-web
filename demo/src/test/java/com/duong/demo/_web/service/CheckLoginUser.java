@@ -4,6 +4,7 @@ import com.duong.demo._web.entity.UserEntity;
 import com.duong.demo._web.exception.PasswordIncorrectException;
 import com.duong.demo._web.exception.UserNotExistException;
 import com.duong.demo._web.repository.UserRepository;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -25,8 +26,8 @@ public class CheckLoginUser {
     @Autowired
     private UserService userService;
 
-    @BeforeEach
-    public void init(){
+    @BeforeAll
+    public static void init(){
         UserEntity user = new UserEntity(1L,"duong@rabiloo", "123456");
         Mockito.when(userRepository.findByEmail("duong@rabiloo")).thenReturn(Optional.of(user));
     }
@@ -39,7 +40,7 @@ public class CheckLoginUser {
     @Test
     public void checkLoginUser_returnUserNotExist(){
         assertThrows(UserNotExistException.class, () -> {
-            userService.login("duong@rabiloo1", "123456");
+            userService.login("duong@rabiloo", "123456");
         });
     }
 

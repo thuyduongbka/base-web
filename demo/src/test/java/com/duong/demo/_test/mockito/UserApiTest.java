@@ -44,7 +44,7 @@ public class UserApiTest {
     }
     @Test
     public void findUserEmailApi2_WhenEmailExisted_ReturnFailed() throws Exception {
-        when(service.checkUserByEmail("a@1")).thenReturn("SUCCESS");
+        when(service.checkUserByEmail("a@12")).thenReturn("SUCCESS");
 //        when(service.checkUserByEmail("a@1")).thenReturn("FAILED");
         mockMvc.perform(get("/api/user/check-exist").param("email", "a@1"))
                 .andDo(print())
